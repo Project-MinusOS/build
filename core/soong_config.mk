@@ -62,7 +62,7 @@ $(call add_json_bool, Debuggable,                        $(filter userdebug eng,
 $(call add_json_bool, Eng,                               $(filter eng,$(TARGET_BUILD_VARIANT)))
 $(call add_json_str,  BuildType,                         $(TARGET_BUILD_TYPE))
 
-$(call add_json_str,  MinusDeviceName,                   $(TARGET_DEVICE))
+$(call add_json_str,  DeviceName,                        $(TARGET_DEVICE))
 $(call add_json_str,  DeviceProduct,                     $(TARGET_PRODUCT))
 $(call add_json_str,  DeviceArch,                        $(TARGET_ARCH))
 $(call add_json_str,  DeviceArchVariant,                 $(TARGET_ARCH_VARIANT))
@@ -149,7 +149,6 @@ $(call add_json_list, NativeCoverageExcludePaths,        $(NATIVE_COVERAGE_EXCLU
 $(call add_json_bool, ArtUseReadBarrier,                 $(call invert_bool,$(filter false,$(PRODUCT_ART_USE_READ_BARRIER))))
 $(call add_json_str,  BtConfigIncludeDir,                $(BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR))
 $(call add_json_list, DeviceKernelHeaders,               $(TARGET_DEVICE_KERNEL_HEADERS) $(TARGET_BOARD_KERNEL_HEADERS) $(TARGET_PRODUCT_KERNEL_HEADERS))
-$(call add_json_str,  TargetSpecificHeaderPath,          $(TARGET_SPECIFIC_HEADER_PATH))
 $(call add_json_str,  VendorApiLevel,                    $(BOARD_API_LEVEL))
 $(call add_json_list, ExtraVndkVersions,                 $(PRODUCT_EXTRA_VNDK_VERSIONS))
 $(call add_json_list, DeviceSystemSdkVersions,           $(BOARD_SYSTEMSDK_VERSIONS))
@@ -367,7 +366,6 @@ $(call add_json_list, DeviceFrameworkCompatibilityMatrixFile, $(DEVICE_FRAMEWORK
 $(call add_json_list, DeviceProductCompatibilityMatrixFile, $(DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE))
 $(call add_json_list, BoardAvbSystemAddHashtreeFooterArgs, $(BOARD_AVB_SYSTEM_ADD_HASHTREE_FOOTER_ARGS))
 $(call add_json_bool, BoardAvbEnable, $(filter true,$(BOARD_AVB_ENABLE)))
-$(call add_json_list, MinusDevice, $(TARGET_DEVICE))
 
 $(call json_end)
 
