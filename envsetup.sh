@@ -500,6 +500,13 @@ function lunch()
 
 function _lunch_meat()
 {
+    if (echo -n $1 | grep -q -e "^minus_") ; then
+        MINUS_BUILD=$(echo -n $1 | sed -e 's/^minus_//g')
+    else
+        MINUS_BUILD=
+    fi
+    export MINUS_BUILD
+
     local product=$1
     local release=$2
     local variant=$3
