@@ -33,11 +33,5 @@ PRODUCT_PACKAGES += \
     SettingsIntelligence \
     frameworks-base-overlays
 
-ifeq ($(MINUS_BUILD),)
-PRODUCT_PACKAGES += \
-    Camera2 \
-    LatinIME
-endif
-
 PRODUCT_PACKAGES_DEBUG += \
     frameworks-base-overlays-debug
